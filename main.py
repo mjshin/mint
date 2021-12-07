@@ -1,6 +1,6 @@
 import numpy as np
 
-def calc():
+def calc(type):
     arr = np.random.randint(0, 100, 100)
     #arr.sort()
     print("Original Data ")
@@ -15,15 +15,17 @@ def calc():
     print("Trimmed Data ")
     print(arr)
 
-    avg = np.average(arr)
-    std = np.std(arr)
-    min = np.min(arr)
-    max = np.max(arr)
-    print("avg = " , avg, " std = ", std, "min = ", min, "max = ", max)
-
+    if type == 'avg':
+       return np.average(arr)
+    elif type =='std':
+        return np.std(arr)
+    elif type == 'min':
+        return np.min(arr)
+    elif type == 'max':
+        return np.max(arr)
 
 def main():
-    calc()
+    print (calc('avg'))
 
 if __name__ == "__main__":
     main()
